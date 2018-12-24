@@ -4,24 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Genau Social Soccer Club</a></h1>
-        </div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 23.12.2018, 12:14</p>
-            <h2><a href="">How It All Started</a></h2>
-            <p>Managed by Vincent Mangisai, a tough and strict Gaffer.  Our Soccer team is vibrant and supported by many youthful players, tapped from our male members of staff, as well as a blend of active old horses, It was formed end of 2018 and has played a handfull of games.  the team is showing a lot of potential. If given the continued necessary support they can end up in the first division league </p>
-        </div>
-
-        <div>
-            <p>published: 23.12.2018, 12:14</p>
-            <h2><a href="">Friendly Matches</a></h2>
-            <p>They started off well, considering how the team was hurriedly established with hardly a month before a major tornament which comprised of several seasoned players from well to do and experienced teams</p>
-        </div>
+{% for post in posts %}
     <div>
-            <p>published: 23.12.2018, 12:14</p>
-            <h2><a href="">Cheer Leaders</a></h2>
-            <p>Composed of a bevy of beauties from amongst the staff of Genau, the Soccer team boasts of a unique fan base. Lead by non other than Kudzie with Tarnia and Blessings on her flanks, the cheer leaders always beutifies the Soccer team which distracts Genau's opponents as they cheer and scream when ever the boys in white are in possession of the ball </p>
-        </div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
